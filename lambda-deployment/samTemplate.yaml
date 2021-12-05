@@ -5,9 +5,9 @@ Resources:
   CDDemoLambda:
     Type: 'AWS::Serverless::Function'
     Properties:
-      Handler: LambdaFunctionHandler.handleRequest
-      Runtime: Java 8 on Amazon Linux 1
-      CodeUri: ./LambdaCode
+      Handler: com.amazonaws.lambda.deployment.LambdaFunctionHandler::handleRequest
+      Runtime: java8
+      CodeUri: target/deployment-1.0.0.jar
       Description: 'Lambda function for CD Demo'
       MemorySize: 128
       Timeout: 30
@@ -20,4 +20,4 @@ Resources:
             Method: get
       Environment:
         Variables:
-          REGION: ap-southeast-2
+          REGION: ap-south-1
