@@ -7,7 +7,7 @@ Resources:
     Properties:
       Handler: com.amazonaws.lambda.deployment.LambdaFunctionHandler::handleRequest
       Runtime: java8
-      CodeUri: lambda-deployment/target/deployment-1.0.0.jar
+      CodeUri: lambda-deployment/target/deployment-1.0.0-shaded.jar
       Description: 'Lambda function for CD Demo'
       MemorySize: 128
       Timeout: 30
