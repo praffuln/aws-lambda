@@ -3,7 +3,7 @@ phases:
   install:
     commands:
       - echo Build completed on `date`
-      - mvn package
+      - mvn package -f lambda-deployment/pom.xml
       - aws cloudformation package --template-file lambda-deployment/samTemplate.yaml --s3-bucket praffuln-lambda-pipeline --output-template-file outputSamTemplate.yaml
 artifacts:
   type: zip
