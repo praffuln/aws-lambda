@@ -42,6 +42,7 @@ public class TestUtils {
 
     static {
         mapper.configure(JsonParser.Feature.ALLOW_COMMENTS, true);
+        mapper.configure(JsonParser.Feature.ALLOW_COMMENTS, true);
         mapper.setPropertyNamingStrategy(new UpperCaseRecordsPropertyNamingStrategy());
         mapper.registerModule(new TestJacksonMapperModule());
 
