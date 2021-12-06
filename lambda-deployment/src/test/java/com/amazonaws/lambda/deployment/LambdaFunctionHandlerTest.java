@@ -1,6 +1,7 @@
 package com.amazonaws.lambda.deployment;
 
 import java.io.IOException;
+import java.util.Map;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -13,7 +14,7 @@ import com.amazonaws.services.lambda.runtime.Context;
  */
 public class LambdaFunctionHandlerTest {
 
-    private static Object input;
+    private static Map<String, Object> input;
 
     @BeforeClass
     public static void createInput() throws IOException {
