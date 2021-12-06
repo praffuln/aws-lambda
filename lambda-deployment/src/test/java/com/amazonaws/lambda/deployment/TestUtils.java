@@ -41,7 +41,6 @@ public class TestUtils {
     private static final ObjectMapper dynamodbEventMapper = new ObjectMapper();
 
     static {
-    	mapper.configure(JsonParser.Feature.ALLOW_COMMENTS, true);
         mapper.configure(JsonParser.Feature.ALLOW_COMMENTS, true);
         mapper.setPropertyNamingStrategy(new UpperCaseRecordsPropertyNamingStrategy());
         mapper.registerModule(new TestJacksonMapperModule());
