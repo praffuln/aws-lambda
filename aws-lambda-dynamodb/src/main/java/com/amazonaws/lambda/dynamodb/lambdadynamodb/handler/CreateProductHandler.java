@@ -1,8 +1,10 @@
-package com.amazonaws.lambda.dynamodb.lambdadynamodb;
+package com.amazonaws.lambda.dynamodb.lambdadynamodb.handler;
 
 import java.util.Collections;
 import java.util.Map;
 
+import com.amazonaws.lambda.dynamodb.lambdadynamodb.ApiGatewayResponse;
+import com.amazonaws.lambda.dynamodb.lambdadynamodb.Product;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.fasterxml.jackson.databind.JsonNode;

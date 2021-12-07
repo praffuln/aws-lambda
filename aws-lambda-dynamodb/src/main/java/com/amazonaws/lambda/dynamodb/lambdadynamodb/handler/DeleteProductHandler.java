@@ -1,19 +1,14 @@
-package com.amazonaws.lambda.dynamodb.lambdadynamodb;
+package com.amazonaws.lambda.dynamodb.lambdadynamodb.handler;
 
 import java.util.Collections;
 import java.util.Map;
 
+import com.amazonaws.lambda.dynamodb.lambdadynamodb.ApiGatewayResponse;
+import com.amazonaws.lambda.dynamodb.lambdadynamodb.Product;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
-/**
-		"pathParameters": {
-		    "id": "2b5159ea-1857-4e00-8197-967a2e9c8804"
-		 }
- *
- *
- */
-public class GetProductHandler implements RequestHandler<Map<String, Object>, ApiGatewayResponse> {
+public class DeleteProductHandler implements RequestHandler<Map<String, Object>, ApiGatewayResponse> {
 
 	@Override
 	public ApiGatewayResponse handleRequest(Map<String, Object> input, Context context) {
@@ -24,27 +19,24 @@ public class GetProductHandler implements RequestHandler<Map<String, Object>, Ap
 			String productId = pathParameters.get("id");
 
 			// get the Product by id
-			Product product = new Product().get(productId);
+			Boolean success = new Product().delete(productId);
 
 			// send the response back
-			if (product != null) {
-				// send the response back
-				return new ApiGatewayResponse().setStatusCode("200").setBody(product.toString())
+			if (success) {
+				return new ApiGatewayResponse().setStatusCode("204").setBody("" + success)
 						.setHeaders(Collections.singletonMap("X-Powered-By", "AWS Lambda & Serverless"));
 
 			} else {
-
 				// send the error response back
 				return new ApiGatewayResponse().setStatusCode("404")
 						.setBody("Product with id: '" + productId + "' not found.")
 						.setHeaders(Collections.singletonMap("X-Powered-By", "AWS Lambda & Serverless"));
-
 			}
 		} catch (Exception ex) {
-			System.err.println("Error in retrieving product: " + ex);
+			System.err.println("Error in deleting product: " + ex);
 
 			// send the error response back
-			return new ApiGatewayResponse().setStatusCode("500").setBody("Error in retrieving product: " + ex)
+			return new ApiGatewayResponse().setStatusCode("500").setBody("Error in deleting product: " + ex)
 					.setHeaders(Collections.singletonMap("X-Powered-By", "AWS Lambda & Serverless"));
 		}
 	}
