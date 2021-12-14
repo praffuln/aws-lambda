@@ -12,3 +12,9 @@ java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb [o
 For more information on available options, run with the -help option:
 
   java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -help
+
+
+DynamoDB Local Visulization
+---------------------------------------------------------------
+Download NoSQL Workbench for visulization : https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/workbench.settingup.html
+
