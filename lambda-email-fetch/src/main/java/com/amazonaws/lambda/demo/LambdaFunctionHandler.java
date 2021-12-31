@@ -1,0 +1,20 @@
+package com.amazonaws.lambda.demo;
+
+import com.amazonaws.lambda.sql.connection.JdbcSQLServerConnection;
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
+
+public class LambdaFunctionHandler implements RequestHandler<Object, String> {
+
+    @Override
+    public String handleRequest(Object input, Context context) {
+        context.getLogger().log("Input: " + input);
+
+       // SendMailTLS.sendMailTLS("prafful.namdev18@gmail.com", "hi");
+        
+        JdbcSQLServerConnection.checkSqlConnection();
+        // TODO: implement your handler
+        return "Hello from Lambda!";
+    }
+
+}
