@@ -22,7 +22,7 @@ public class JdbcSQLServerConnection {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			String dbURL = 	"jdbc:sqlserver://rds-mssql.cwtsp1cve8au.ap-south-1.rds.amazonaws.com:1433;databaseName=BluePrism;";
 			String user = "sa";
-			String pass = "server.123";
+			String pass = "";
 			conn = DriverManager.getConnection(dbURL, user, pass);
 			if (conn != null) {
 				DatabaseMetaData dm = (DatabaseMetaData) conn.getMetaData();
