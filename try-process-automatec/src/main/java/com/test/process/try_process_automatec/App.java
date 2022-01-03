@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.microsoft.graph.models.User;
+
 public class App {
 
 	public static void main(String[] args) throws IOException, InterruptedException {

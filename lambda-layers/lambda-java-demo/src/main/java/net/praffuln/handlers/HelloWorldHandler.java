@@ -14,8 +14,12 @@ import com.google.gson.GsonBuilder;
  */
 public class HelloWorldHandler implements RequestHandler<Map<String,Object>, String>{
 	  
-	  public String handleRequest(Map<String,Object> event, Context context)
+ 	  public String handleRequest(Map<String,Object> event, Context context)
 	  {
+		  
+		  ///outlook or file system
+          		  
+		  
 	    LambdaLogger logger = context.getLogger();
 	    String response = new String("200 OK");
 	    logger.log("ENVIRONMENT:"+System.getenv());
